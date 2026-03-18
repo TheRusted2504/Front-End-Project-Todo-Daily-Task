@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { Button, Container, Form } from 'react-bootstrap'
-import { TodoContext } from "../contexts/TodoContext";
+import { DailyContext } from "../contexts/DailyContext";
 import { useNavigate } from "react-router-dom";
 
 export default function AddDailyTodo() {
@@ -8,8 +8,8 @@ export default function AddDailyTodo() {
     const [description, setDescription] = useState('')
 
     const [completed, setCompleted] = useState(false)
-    const setDaily = useContext(TodoContext).setDaily
-    const daily = useContext(TodoContext).daily
+    const setDaily = useContext(DailyContext).setDaily
+    const daily = useContext(DailyContext).daily
     const navigate = useNavigate()
 
     return (

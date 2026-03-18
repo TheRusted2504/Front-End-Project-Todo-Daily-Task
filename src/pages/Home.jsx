@@ -1,12 +1,12 @@
 import { useContext } from "react";
 import DailyCard from "../components/DailyCard";
 import { Badge, Card, CardTitle, Col, Container, Row } from "react-bootstrap";
-import { TodoContext } from "../contexts/TodoContext";
+import { DailyContext } from "../contexts/DailyContext";
 import { Outlet } from "react-router-dom";
 import kazuha from '../assets/kazuha.jpg';
 
 export default function Home() {
-    const { daily } = useContext(TodoContext);
+    const { daily } = useContext(DailyContext);
 
     return (
         <div className="bg-image"

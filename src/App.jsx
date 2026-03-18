@@ -4,7 +4,7 @@ import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom'
 import ErrorPage from './pages/ErrorPage'
 import AddDailyTodo from './pages/AddDailyTodo'
 import { useLocalStorage } from 'usehooks-ts' //put back import useLocalStorage from 'use-local-storage' 
-import { TodoContext } from './contexts/TodoContext'
+import { DailyContext } from './contexts/DailyContext'
 import EditDailyTodo from './pages/EditDailyTodo'
 import Login from './pages/Login'
 import { AuthContext } from './contexts/authContext'
@@ -37,7 +37,7 @@ export default function App() {
   const [daily, setDaily] = useLocalStorage('daily-key', [])//put back  const [daily, setDaily] = useLocalStorage('daily', []) when it is fixed / 2. add this code back if latest fail: const [daily, setDaily] = useState([])//put back  const [daily, setDaily] = useLocalStorage('daily', []) when it is fixed / 2. add this code back if latest fail: const [daily, setDaily] = useState([])
   const [token, setToken] = useLocalStorage('token-key', 0) //put back if code fail: const [token, setToken] = useState(null) 
   return (
-    <TodoContext.Provider value={{ daily, setDaily }}> {/* //put back <TodoContext.Provider value={{ daily, setDaily }}></TodoContext.Provider>*/}
+    <DailyContext.Provider value={{ daily, setDaily }}> {/* //put back <DailyContext.Provider value={{ daily, setDaily }}></DailyContext.Provider>*/}
       <AuthContext.Provider value={{ token, setToken }}>
         <BrowserRouter>
           <Routes>
@@ -57,7 +57,7 @@ export default function App() {
           </Routes>
         </BrowserRouter>
       </AuthContext.Provider>
-    </TodoContext.Provider>
+    </DailyContext.Provider>
   )
 }
 

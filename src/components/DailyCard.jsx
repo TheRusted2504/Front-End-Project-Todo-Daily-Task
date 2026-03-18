@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react'
 import { Button, Card, Image } from "react-bootstrap";
-import { TodoContext } from '../contexts/TodoContext';
+import { DailyContext } from '../contexts/DailyContext';
 import despair from '../assets/despair.webp';
 
 export default function DailyCard({ daily }) {
@@ -8,7 +8,7 @@ export default function DailyCard({ daily }) {
     const border = completed ? 'success' : 'danger'
     const [timer, setTimer] = useState(0)
     const [timerInterval, setTimerInterval] = useState(null)
-    const setDaily = useContext(TodoContext).setDaily;
+    const setDaily = useContext(DailyContext).setDaily;
 
     const startTimer = () => {
         if (timerInterval === null) {

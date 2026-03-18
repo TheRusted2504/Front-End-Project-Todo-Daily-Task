@@ -2,12 +2,12 @@ import { useContext, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
-import { TodoContext } from '../contexts/TodoContext';
+import { DailyContext } from '../contexts/DailyContext';
 import { useNavigate, useParams } from 'react-router-dom';
 
 export default function EditDailyTodo() {
-    const setDaily = useContext(TodoContext).setDaily;
-    const daily = useContext(TodoContext).daily;
+    const setDaily = useContext(DailyContext).setDaily;
+    const daily = useContext(DailyContext).daily;
     const navigate = useNavigate();
     const id = parseInt(useParams().id);
     const currentDaily = daily.filter((daily) => daily.id === id)[0];
