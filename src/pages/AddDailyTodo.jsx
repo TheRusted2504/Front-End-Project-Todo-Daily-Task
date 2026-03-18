@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 export default function AddDailyTodo() {
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
-    const [description2, setDescription2] = useState('')
+
     const [completed, setCompleted] = useState(false)
     const setDaily = useContext(TodoContext).setDaily
     const daily = useContext(TodoContext).daily
@@ -20,7 +20,7 @@ export default function AddDailyTodo() {
                     event.preventDefault()
                     setDaily([
                         ...daily,
-                        { id: Date.now(), title, description, description2, completed },
+                        { id: Date.now(), title, description, completed },
                     ])
                     navigate('/')
                 }}>
@@ -46,17 +46,7 @@ export default function AddDailyTodo() {
                     />
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="description">
-                    <Form.Label>Description 2</Form.Label>
-                    <Form.Control
-                        value={description2}
-                        onChange={(e) => setDescription2(e.target.value)}
-                        as='textarea'
-                        rows={3}
-                        placeholder={"Add your daily"}
-                        required
-                    />
-                </Form.Group>
+
 
                 <Form.Check
                     type="checkbox"

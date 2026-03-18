@@ -56,8 +56,7 @@ export default function DailyCard({ daily }) {
                 </Card.Header>
                 <Card.Body>
                     <Card.Title>{daily.title}</Card.Title>
-                    <Card.Text>{daily.description}</Card.Text >
-                    <Card.Text>{daily.description2}</Card.Text >
+                    <Card.Text style={{ whiteSpace: 'pre-line' }}>{daily.description}</Card.Text >
                     <Image src={despair} style={{ width: '50px', height: '50px' }} />
                     <p></p>
                     <Button

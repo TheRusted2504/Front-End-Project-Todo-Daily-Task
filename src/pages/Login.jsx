@@ -11,7 +11,7 @@ export default function Login() {
     const authContext = useContext(AuthContext)
 
     function login() {
-        const isCorrectUsername = username === 'ben@sigmaschool.co'
+        const isCorrectUsername = username === 'ben'
         const isCorrectPassword = password === 'password'
         if (isCorrectUsername && isCorrectPassword) {
             authContext.setToken('1234')

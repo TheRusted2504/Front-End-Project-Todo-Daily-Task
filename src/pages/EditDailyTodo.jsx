@@ -13,14 +13,14 @@ export default function EditDailyTodo() {
     const currentDaily = daily.filter((daily) => daily.id === id)[0];
     const [title, setTitle] = useState(currentDaily.title);
     const [description, setDescription] = useState(currentDaily.description);
-    const [description2, setDescription2] = useState(currentDaily.description2);
+
     const [completed, setCompleted] = useState(currentDaily.completed);
 
     function updateTodo(event) {
         event.preventDefault();
         const updatedDaily = daily.map((daily) => {
             if (daily.id === id) {
-                return { id, title, description, description2, completed };
+                return { id, title, description, completed };
             }
             return daily;
         });
@@ -54,17 +54,7 @@ export default function EditDailyTodo() {
                     />
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="description">
-                    <Form.Label>Description</Form.Label>
-                    <Form.Control
-                        value={description2}
-                        onChange={(e) => setDescription2(e.target.value)}
-                        as="textarea"
-                        rows={3}
-                        placeholder={`Add your daily`}
-                        required
-                    />
-                </Form.Group>
+
 
                 <Form.Check
                     type="checkbox"
